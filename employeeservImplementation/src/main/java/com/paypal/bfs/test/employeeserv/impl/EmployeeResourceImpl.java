@@ -2,6 +2,7 @@ package com.paypal.bfs.test.employeeserv.impl;
 
 import com.paypal.bfs.test.employeeserv.api.EmployeeResource;
 import com.paypal.bfs.test.employeeserv.api.model.Employee;
+import com.paypal.bfs.test.employeeserv.exception.EmployeeBadRequestException;
 import com.paypal.bfs.test.employeeserv.exception.EmployeeNotFoundException;
 import com.paypal.bfs.test.employeeserv.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,11 @@ public class EmployeeResourceImpl implements EmployeeResource {
     @Override
     public ResponseEntity<Employee> createEmployee(Employee employee) {
 
-        Employee obj = employeeService.saveEmployee(employee);
-        return new ResponseEntity<>(obj, HttpStatus.CREATED);
+        try{
+            Employee obj = employeeService.saveEmployee(employee);
+            return new ResponseEntity<>(obj, HttpStatus.CREATED);
+        }catch(EmployeeBadRequestException exception){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 }
