@@ -30,6 +30,10 @@
       "type": "object",
       "properties": {
         "entity": true,
+        "id": {
+          "description": "address id",
+          "type": "integer"
+        },
         "city": {
           "description": "city",
           "type": "string",
