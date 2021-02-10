@@ -51,10 +51,18 @@
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>1.0.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.paypal.bfs.test</groupId>
+                        <version>0.0.1-SNAPSHOT</version>
+                        <artifactId>custom-library</artifactId>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <sourceDirectory>${project.basedir}/src/main/resources/v1/schema</sourceDirectory>
                     <targetPackage>com.paypal.bfs.test.employeeserv.api.model</targetPackage>
                     <useCommonsLang3>true</useCommonsLang3>
+                    <customAnnotator>com.utils.HibernateAnnotator</customAnnotator>
                     <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
                 </configuration>
                 <executions>

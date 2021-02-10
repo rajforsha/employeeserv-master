@@ -3,6 +3,7 @@
   "description": "Employee resource object",
   "type": "object",
   "properties": {
+    "entity": true,
     "id": {
       "description": "employee id",
       "type": "integer"
@@ -28,6 +29,7 @@
       "description": "address",
       "type": "object",
       "properties": {
+        "entity": true,
         "city": {
           "description": "city",
           "type": "string",
