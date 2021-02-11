@@ -35,3 +35,24 @@ We would like you to enhance the existing project and see you complete the follo
 
 ## Assignment submission
 Thank you very much for your time to take this test. Please upload this complete solution in Github and send us the link to `bfs-sor-interview@paypal.com`.
+
+
+## please find the example curl
+
+Get Employee - 
+`curl --location --request GET 'http://localhost:8080/v1/bfs/employees/1'`
+
+create Employee - 
+`curl --location --request POST 'http://localhost:8080/v1/bfs/employee' \
+                  --header 'Content-Type: application/json' \
+                  --data-raw '{
+                      "first_name": "BFS",
+                      "last_name": "Developer",
+                      "date_of_birth": "1994-01-10T16:00:00Z",
+                      "address": {
+                          "city": "Bangalore",
+                          "state": "Karnataka",
+                          "country": "India",
+                          "zip_code": "560087"
+                      }
+                  }'`

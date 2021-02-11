@@ -39,7 +39,7 @@ public class HibernateAnnotator extends AbstractAnnotator {
                         .put("type", "integer")
                         .put("description", "The ID of " + clazz.name())
                         .put("minLength", "1")
-                        .put("minimum", "1")
+                        .put("maxLength", "1")
                         .put("required", "1");
             }
       }

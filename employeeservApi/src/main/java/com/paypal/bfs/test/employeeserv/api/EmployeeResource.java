@@ -4,6 +4,7 @@ import com.paypal.bfs.test.employeeserv.api.model.Employee;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -28,5 +29,5 @@ public interface EmployeeResource {
     @RequestMapping(value= "/v1/bfs/employee", method= RequestMethod.POST,
             consumes = {MediaType.APPLICATION_JSON},
             produces = {MediaType.APPLICATION_JSON})
-    ResponseEntity<Employee> createEmployee(@RequestBody Employee employee);
+    ResponseEntity<Employee> createEmployee(@RequestBody @Valid Employee employee);
 }
