@@ -24,8 +24,12 @@ import org.springframework.web.bind.annotation.RestController;
 @EntityScan("com.paypal.bfs.test.employeeserv.api.model")
 public class EmployeeResourceImpl implements EmployeeResource {
 
-    @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    public EmployeeResourceImpl(EmployeeService employeeService){
+        this.employeeService = employeeService;
+    }
 
     @Override
     public ResponseEntity<Employee> employeeGetById(String id) {
